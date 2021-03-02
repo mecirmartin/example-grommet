@@ -140,8 +140,6 @@ const App = ({ locale, messages }) => {
   )
 }
 const locale = navigator.language
-if(!window.__skip_render){
-  loadLocaleData(locale).then((messages) => {
-    render(<App locale={locale}  messages={messages} />, document.getElementById("root"))
-  })
-}
+loadLocaleData(locale).then((messages) => {
+  render(<App locale={locale}  messages={messages} />, document.getElementById("root"))
+})
